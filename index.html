@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>walmart-tv</title>
+  <link rel="icon" href="https://walmart-tv.xyz/favicon.png">
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link href="https://cdn.jsdelivr.net/gh/onigetoc/videojs-unmute@main/src/videojs-unmute.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/onigetoc/videojs-unmute@main/src/videojs-unmute.min.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+    #my-video {
+      width: 100%;
+      height: 40%;
+    }
+    widgetbot {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+        bottom: 0px;
+        right: 0px;}
+  </style>
+</head>
+<body>
+  <!-- Video element -->
+  <video id="my-video" class="video-js" preload="auto" autoplay="true" data-setup="{}" muted="true">
+    <!-- HLS source -->
+    <source src="https://stream.walmart-tv.xyz/hls/walmart.m3u8" type="application/x-mpegURL">
+    <!-- Fallback for browsers that don't support HLS -->
+    <p class="vjs-no-js">
+      To view the stream, please enable JavaScript (no, I'm not stealing your bank info I'm just using video.js), and upgrade to a browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank" rel="noopener">supports HTML5 video</a>
+    </p>
+  </video>
+  <widgetbot
+    server="1244657641406468146"
+    channel="1244657641406468149"
+></widgetbot>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+<script>
+        const myPlayer = videojs("my-video");
+// Call the plugin
+myPlayer.unmuteButton();  
+    </script>
+</body>
+</html>
